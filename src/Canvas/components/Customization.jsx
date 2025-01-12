@@ -53,22 +53,6 @@ export function Picker() {
   const container = useRef()
   const { contextSafe } = useGSAP({scope: container})
 
-  const rotation = contextSafe(() => {
-    return gsap.fromTo(
-      '.rotate', 
-      {
-        rotate: 0
-      }, 
-      {
-        rotate: 180,   
-        duration: 0.4, 
-        ease: 'expo.inOut',
-        paused: true 
-      }
-    )
-  }, [container])
-
-  rotation.call()
   const btns = document.querySelectorAll('.colorway')
   const removeClass = () => 
   {
@@ -77,9 +61,9 @@ export function Picker() {
 
 
   return (
-    <div className="absolute bottom-[0rem] left-[0rem] w-full sm:w-fit sm:bottom-[2rem] sm:left-[2rem] bg-black-100 sm:rounded-xl px-4 py-4 z-20 opacity-[100%] sm:opacity-[80%] backdrop-filter backdrop-blur-md" style={{ /* display: window.innerWidth > 768 ? "block" : "none" */ }}>
+    <div className="absolute bottom-[0rem] left-[0rem] w-full sm:w-fit sm:bottom-[2rem] sm:left-[2rem] bg-black-100 sm:rounded-xl px-4 py-4 z-20 sm:opacity-[80%] backdrop-filter backdrop-blur-md">
       <div ref={container} className='cursor-pointer flex justify-between items-center' onClick={() => { isOpened === false ? setIsOpened(true) : setIsOpened(false) }}>
-        <h3 className='font-bold text-white-100 text-xl uppercase text-center pb-1'>
+        <h3 className='font-bold text-white-100 text-xl uppercase text-center pl-1 pb-1'>
           Customize
         </h3>
         <MdExpandLess className='rotate text-white-100 w-[2rem] h-[2rem]' /> 

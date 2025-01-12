@@ -1,7 +1,7 @@
 import { Canvas } from "@react-three/fiber"
 import { ContactShadows, Environment, OrbitControls } from "@react-three/drei"
 
-import { Shoe, Picker } from "./components/Shoe"
+import { Shoe, Picker } from "./components/Customization"
 
 export default function Experience() {
 

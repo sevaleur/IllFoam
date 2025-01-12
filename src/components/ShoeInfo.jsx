@@ -17,7 +17,7 @@ const ShoeInfo = () => {
           Hitting the gym, running errands, or chasing new records? the Velocity adapts to your every move.
         </p>
       </div>
-      <div className='w-fit absolute sm:bottom-[20rem] sm:right-[8rem] bottom-[2rem]'>
+      <div className='w-fit absolute sm:bottom-[20rem] sm:right-[8rem] bottom-[4rem]'>
         <h2 className='font-semibold text-lg py-3 italic'>
           The iconic shoe that put <span className='font-bold text-orange'>Illfoam</span> on the map.
         </h2>
@@ -33,6 +33,11 @@ const ShoeInfo = () => {
         dual-density Illfoam™ midsole, offering plush <br/>
         cushioning and responsive energy return for <br/>
         all-day comfort.
+        </p>
+      </div>
+      <div className="opacity-0 sm:opacity-100 absolute bottom-2 left-[50%] translate-x-[-50%]">
+        <p className="text-md font-light">
+          Copyright © 2025 ILLFOAM 
         </p>
       </div>
     </section>

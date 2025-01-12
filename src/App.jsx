@@ -6,8 +6,8 @@ function App() {
   return (
     <main className='h-screen w-screen relative bg-white-100'>
       <Header /> 
-      <Experience /> 
       <ShoeInfo /> 
+      <Experience /> 
     </main>
   )
 }
