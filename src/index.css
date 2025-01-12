@@ -4,25 +4,21 @@
 
 @layer utilities {
   .colorway {
-    padding: 15px 10px;  
-    border-bottom: 0.5px solid #ffeadb; 
-    width: 100%; 
     transition: all 0.2s ease-in-out; 
     cursor: pointer;
     color: #ffeadb;
-    text-transform: uppercase;
-    mix-blend-mode: difference;
-    font-weight: bold;
     text-align: center;
-    font-size: 20px;
-  }
-
-  .colorway:last-of-type {
-    border-bottom: none; 
   }
 
   .colorway:hover {
-    /* background: #ffeadb; 
-    color: #15252d; */
+    background: #15252d; 
   }
+
+  .active {
+    background: #15252d;  
+  }
+}
+
+.ReactCollapse--collapse {
+  transition: height 500ms;
 }
