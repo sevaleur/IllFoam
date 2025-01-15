@@ -18,15 +18,15 @@ const Shoe = ({
   const snap = useSnapshot(state)
 
   useFrame((state) => {
-    const t = state.clock.getElapsedTime()
+    const elapsedTime = state.clock.getElapsedTime()
 
     ref.current.rotation.set(
-      Math.cos(t / 4) / 8, 
-      Math.sin(t / 4) / 8, 
-      -0.2 - (1 + Math.sin(t / 1.5)) / 20
+      Math.cos(elapsedTime / 4) / 8, 
+      Math.sin(elapsedTime / 4) / 8, 
+      -0.2 - (1 + Math.sin(elapsedTime / 1.5)) / 20
     )
-    
-    ref.current.position.y = (1 + Math.sin(t / 1.5)) / 10
+
+    ref.current.position.y = (1 + Math.sin(elapsedTime / 1.5)) / 10
   })
 
   return (

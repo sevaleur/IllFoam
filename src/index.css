@@ -11,11 +11,18 @@
   }
 
   .colorway:hover {
-    background: #1d3440; 
+    background: rgba(29, 52, 64, 0.4); 
+    backdrop-filter: blur(4px);
+  }
+
+  .colorway>p:hover 
+  {
+    opacity: 100%;
   }
 
   .active {
-    background: #1d3440; 
+    background: rgba(29, 52, 64, 0.4); 
+    backdrop-filter: blur(4px);
     border-radius: 6px;  
   }
 

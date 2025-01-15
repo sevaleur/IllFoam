@@ -1,4 +1,5 @@
 const ShoeInfo = () => {
+  
   return (
     <section className='flex flex-col justify-between items-center w-full h-full absolute top-0 left-0'>
 
@@ -37,8 +38,9 @@ const ShoeInfo = () => {
         </p>
       </div>
 
-      <div className="absolute sm:left-[8rem] bottom-[5rem] sm:bottom-[20rem]">
-        <h3 className="font-semibold text-lg py-5">
+      
+      <div className="absolute sm:left-[15rem] bottom-[8rem] sm:bottom-[22rem] opacity-[0%] sm:opacity-[100%]">
+        <h3 className="font-bold text-lg py-5 italic">
           Details
         </h3>
         <ul>
