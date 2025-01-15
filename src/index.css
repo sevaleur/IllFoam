@@ -11,14 +11,21 @@
   }
 
   .colorway:hover {
-    background: #15252d; 
+    background: #1d3440; 
   }
 
   .active {
-    background: #15252d;  
+    background: #1d3440; 
+    border-radius: 6px;  
+  }
+
+  .listItem {
+    padding: 5px 0; 
+    list-style: disc; 
   }
 }
 
 .ReactCollapse--collapse {
   transition: height 500ms;
+  transform-origin: bottom;
 }
