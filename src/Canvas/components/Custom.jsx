@@ -63,8 +63,8 @@ const Custom = ({ state: state, materials: materials }) => {
       handle='.handle'
       positionOffset={{ x: window.innerWidth > 768 ? '-50%' : 0, y: 0 }}
     >
-      <div ref={container} className='custom__button absolute bottom-[0rem] left-[0rem] w-full sm:w-fit sm:bottom-[3rem] sm:left-[50%] bg-black-100/40 sm:rounded-lg p-0.5 z-20 backdrop-filter backdrop-blur-[4px]'>
-        <div className="w-full sm:w-fit bg-black-200/40 backdrop-filter backdrop-blur-[4px] sm:rounded-md pb-12 sm:pb-4 p-4 sm:p-4">
+      <div ref={container} className='custom__button fixed sm:absolute bottom-[0rem] left-[0rem] w-full sm:w-fit sm:bottom-[3rem] sm:left-[50%] bg-black-100/40 sm:rounded-lg p-0.5 z-20 backdrop-filter backdrop-blur-[4px]'>
+        <div className="w-full sm:w-fit bg-black-200/40 backdrop-filter backdrop-blur-[4px] sm:rounded-md p-4">
           <div className='flex justify-between items-center'>
             <MdDragIndicator className='handle text-white-100 w-[2rem] h-[2rem] cursor-pointer opacity-0 sm:opacity-[100%]'/> 
             <h3 className=' text-white-100 text-lg uppercase text-center pl-1 pb-1'>
