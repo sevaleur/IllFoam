@@ -25,24 +25,25 @@ const ShoeInfo = () => {
       }
     )
 
-    tl.fromTo(
-      window.innerWidth > 768 
-        ? ['.header__desc', '.header__details'] 
-        : ['.header__details'], 
-      {
-        opacity: 0, 
-      }, 
-      {
-        opacity: 1
-      }
-    )
+    if(window.innerWidth > 768)
+    {
+      tl.fromTo(
+        ['.header__desc', '.header__details'], 
+        {
+          opacity: 0, 
+        }, 
+        {
+          opacity: 1
+        }
+      )
+    }
 
   }, { scope: container })
   
   return (
     <section ref={container} className='flex flex-col justify-between items-center w-full h-full absolute top-0 left-0'>
 
-      <div className='header__title flex flex-col justify-start items-center pt-[10rem] w-fit opacity-0'>
+      <div className='header__title flex flex-col justify-start items-center pt-[6rem] sm:pt-[10rem] w-fit opacity-0'>
         <div className='flex justify-center gap-5 sm:justify-between w-full'>
           <p className='font-bold text-sm text-black-100'>
             [ 0.01 ]

@@ -25,9 +25,9 @@ const Header = () => {
   }, {scope: ref})
 
   return (
-    <header ref={ref} className='absolute top-0 left-0 w-full h-[5rem] flex justify-center items-center z-20'> 
-      <div className='w-[5rem] h-full pt-5'>
-        <figure className='h-[5rem] w-full'>
+    <header ref={ref} className='absolute top-0 left-0 w-full h-[3rem] sm:h-[5rem] flex justify-center items-center z-20'> 
+      <div className='w-[3rem] sm:w-[5rem] h-full pt-2 sm:pt-5'>
+        <figure className='h-[3rem] sm:h-[5rem] w-full'>
           <img 
             className='header__logo h-full w-full object-cover opacity-0'
             src='/logo.png'
