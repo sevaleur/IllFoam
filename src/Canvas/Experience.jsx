@@ -8,7 +8,7 @@ import state from './components/state'
 
 const Experience = () => {
 
-  const { nodes, materials } = useGLTF("./src/assets/shoe-draco.glb")
+  const { nodes, materials } = useGLTF("/shoe-draco.glb")
 
   return (
     <>
