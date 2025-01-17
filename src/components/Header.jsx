@@ -30,7 +30,7 @@ const Header = () => {
         <figure className='h-[5rem] w-full'>
           <img 
             className='header__logo h-full w-full object-cover opacity-0'
-            src='./src/assets/logo.png'
+            src='/logo.png'
             alt='logo'
           /> 
         </figure>
