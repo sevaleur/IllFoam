@@ -1,9 +1,48 @@
+import gsap from 'gsap'
+
+import { useGSAP } from '@gsap/react'
+import { useRef } from 'react'
+
 const ShoeInfo = () => {
+  gsap.registerPlugin(useGSAP)
+
+  const container = useRef(null)
+
+  useGSAP(() => {
+    const tl = gsap.timeline({
+      duration: 0.8, 
+      delay: 0.5, 
+      ease: 'power2.inOut'
+    })
+
+    tl.fromTo(
+      '.header__title',
+      {
+        opacity: 0, 
+      }, 
+      {
+        opacity: 1
+      }
+    )
+
+    tl.fromTo(
+      window.innerWidth > 768 
+        ? ['.header__desc', '.header__details'] 
+        : ['.header__details'], 
+      {
+        opacity: 0, 
+      }, 
+      {
+        opacity: 1
+      }
+    )
+
+  }, { scope: container })
   
   return (
-    <section className='flex flex-col justify-between items-center w-full h-full absolute top-0 left-0'>
+    <section ref={container} className='flex flex-col justify-between items-center w-full h-full absolute top-0 left-0'>
 
-      <div className='flex flex-col justify-start items-center pt-[10rem] w-fit'>
+      <div className='header__title flex flex-col justify-start items-center pt-[10rem] w-fit opacity-0'>
         <div className='flex justify-center gap-5 sm:justify-between w-full'>
           <p className='font-bold text-sm text-black-100'>
             [ 0.01 ]
@@ -19,7 +58,7 @@ const ShoeInfo = () => {
           Hitting the gym, running errands, or chasing new records? the Velocity adapts to your every move.
         </p>
       </div>
-      <div className='w-fit absolute sm:bottom-[20rem] sm:right-[8rem] bottom-[4rem] opacity-[0%] sm:opacity-[100%]'>
+      <div className='header__desc w-fit absolute sm:bottom-[20rem] sm:right-[8rem] bottom-[4rem] opacity-[0%] sm:opacity-0'>
         <h2 className='font-semibold text-lg py-3 italic'>
           The iconic shoe that put <span className='font-bold text-orange'>IllFoam</span> on the map.
         </h2>
@@ -39,11 +78,11 @@ const ShoeInfo = () => {
       </div>
 
       
-      <div className="absolute sm:left-[15rem] bottom-[8rem] sm:bottom-[22rem] opacity-[0%] sm:opacity-[100%]">
-        <h3 className="font-bold text-lg py-5 italic">
+      <div className="header__details absolute sm:left-[15rem] bottom-[6rem] sm:bottom-[19rem] opacity-0">
+        <h3 className="font-bold text-lg text-center py-5 italic opacity-0 sm:opacity-100 sm:text-left">
           Details
         </h3>
-        <ul>
+        <ul className="flex flex-wrap items-center justify-center gap-8 w-full px-10 sm:flex-col sm:w-fit sm:px-0 sm:items-start sm:gap-2">
           <li className="listItem sm:text-md text-sm">
             <p>
               Regular fit

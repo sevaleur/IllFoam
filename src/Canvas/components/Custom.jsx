@@ -9,17 +9,19 @@ import { useState, useEffect, useRef } from 'react'
 import { useSnapshot } from "valtio"
 import { useGSAP } from '@gsap/react'
 
-gsap.registerPlugin(useGSAP)
-
 const Custom = ({ state: state, materials: materials }) => {
+
+  gsap.registerPlugin(useGSAP)
 
   const [ isOpened, setIsOpened ] = useState(false)
   const [ active, setActive ] = useState(undefined) 
   const [ former, setFormer ] = useState(undefined)
 
-  
   const snap = useSnapshot(state)
-  const iconRef = useRef()
+
+  const iconRef = useRef(null)
+  const container = useRef(null)
+
   const { contextSafe } = useGSAP({ scope: iconRef })
 
   useEffect(() => {
@@ -27,6 +29,22 @@ const Custom = ({ state: state, materials: materials }) => {
     if(active) active.parentElement.classList.add('active')
 
   }, [active, former] )
+
+  useGSAP(() => 
+  {
+    gsap.fromTo(
+      container.current, 
+      {
+        opacity: 0
+      }, 
+      {
+        opacity: 1, 
+        duration: 0.8, 
+        delay: 0.5, 
+        ease: 'power2.inOut'
+      }
+    )
+  }, { scope: container } )
 
   
   const handleExpand = contextSafe((isOpened) => {
@@ -45,7 +63,7 @@ const Custom = ({ state: state, materials: materials }) => {
       handle='.handle'
       positionOffset={{ x: window.innerWidth > 768 ? '-50%' : 0, y: 0 }}
     >
-      <div className='absolute bottom-[0rem] left-[0rem] w-full sm:w-fit sm:bottom-[3rem] sm:left-[50%] sm:-translate-x-2/4 bg-black-100/40 sm:rounded-lg p-0.5 z-20 backdrop-filter backdrop-blur-[4px]'>
+      <div ref={container} className='custom__button absolute bottom-[0rem] left-[0rem] w-full sm:w-fit sm:bottom-[3rem] sm:left-[50%] bg-black-100/40 sm:rounded-lg p-0.5 z-20 backdrop-filter backdrop-blur-[4px]'>
         <div className="w-full sm:w-fit bg-black-200/40 backdrop-filter backdrop-blur-[4px] sm:rounded-md p-4">
           <div className='flex justify-between items-center'>
             <MdDragIndicator className='handle text-white-100 w-[2rem] h-[2rem] cursor-pointer opacity-0 sm:opacity-[100%]'/> 
